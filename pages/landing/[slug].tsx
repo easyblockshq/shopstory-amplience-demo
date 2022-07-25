@@ -72,7 +72,7 @@ export const getStaticProps: GetStaticProps<LandingPageProps, { slug: string }> 
    */
 
   const blocks = await Promise.all(
-    landingPageContentItem.slot.blocks.map(async (block) => {
+    landingPageContentItem.blocks.map(async (block) => {
       if (isBlockOfSchemaType(block, 'https://shopstory.app/standard-banner')) {
         const imageUrl = new Image(block.image, amplienceParams).url().build()
 
@@ -145,7 +145,7 @@ export const getStaticProps: GetStaticProps<LandingPageProps, { slug: string }> 
 export default LandingPage
 
 function isBlockOfSchemaType<Schema extends keyof SchemaToBlock>(
-  block: LandingPage['slot']['blocks'][number],
+  block: LandingPage['blocks'][number],
   schema: Schema
 ): block is SchemaToBlock[Schema] {
   return block._meta.schema === schema

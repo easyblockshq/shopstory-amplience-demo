@@ -45,9 +45,7 @@ type SchemaToBlock = {
 
 interface LandingPage extends ContentBody {
   slug: string
-  slot: {
-    blocks: Array<ShopstoryContent | StandardBanner | StandardProductsGrid | StandardTwoColumns>
-  }
+  blocks: Array<ShopstoryContent | StandardBanner | StandardProductsGrid | StandardTwoColumns>
 }
 
 export type { CollectionPage, HomePage, LandingPage, SchemaToBlock }
